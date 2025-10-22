@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+        <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<!-- Los formularios en HTML permiten a los usuarios ingresar y enviar datos al servidor. -->
+
+<body>
+
+    <!-- La etiqueta <form> define un formulario HTML. Todos los elementos de entrada están contenidos dentro de esta etiqueta. -->
+    <!-- action: URL a la que se enviarán los datos del formulario -->
+    <!-- method: Método HTTP para enviar los datos (GET o POST) -->
+        
+    <form action="/submit" method="post">
+        <!-- La etiqueta <input> es la utilizada para los diferentes tipos de entradas de datos
+        Atributos Importantes:
+         type: Especifica el tipo de entrada (text, password, email, checkbox, radio, etc.).name: Nombre del campo para identificar los datos en el servidor.
+         placeholder: Texto de sugerencia dentro del campo.
+         value: Valor predeterminado del campo.-->
+
+        <!-- La etiqueta <label> va asociada a cada <input> para describirlo. El atributo for identifica el elemento de entrada al que se asocia -->
+
+        <h2> DATOS PERSONALES </h2>
+
+        <!-- ENTRADA DE TEXTO CORTA (obligatoria)-->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+        <br><br>
+
+        <!-- ENTRADA DE TEXTO CORTA (obligatoria)-->
+        <label for="apellido_1">Primer apellido:</label>
+        <input type="text" id="apellido_1" name="apellido_1" required>
+        <br><br>
+
+        <!-- ENTRADA DE TEXTO CORTA (no obligatoria)-->
+        <label for="apellido_2">Segundo apellido:</label>
+        <input type="text" id="apellido_2" name="apellido_2">
+        <br><br>
+
+        <!-- ENTRADA NUMÉRICA (con valor mínimo y obligatorio) -->
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="18" required>
+        <br><br>
+
+        <!-- ENTRADA DE CORREO ELECTRÓNICO (no obligatorio) -->
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico">
+        <br><br>
+
+        <!-- BOTONES -->
+        <label>Género:</label><br>
+        <label><input type="radio" name="genero" value="masculino" required> Masculino</label><br>
+        <label><input type="radio" name="genero" value="femenino"> Femenino</label><br>
+        <label><input type="radio" name="genero" value="otro"> Otro</label>
+        <br><br>
+        <hr>
+
+        <h2> MÁS DATOS PERSONALES </h2>
+        
+        <!-- Lista desplegable -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+            <option value="es">España</option>
+            <option value="mx">México</option>
+            <option value="ar">Argentina</option>
+        </select>
+        <br><br>     
+
+        <!-- texto con patrón de expresión regular-->
+        <label for="codigo_postal">Código Postal:</label>
+        <input type="text" id="codigo_postal" name="codigo_postal" pattern="[0-9]{5}" required>
+        <br><br>
+        <hr>
+
+        <h2> OTROS DATOS </h2>
+
+        <!-- Casillas de verificación -->
+        <label>Intereses:</label><br>
+        <label><input type="checkbox" name="intereses" value="musica"> Música</label><br>
+        <label><input type="checkbox" name="intereses" value="deportes"> Deportes</label><br>
+        <label><input type="checkbox" name="intereses" value="lectura"> Lectura</label>
+        <br><br>
+
+        <!-- Área de texto largo con longitud mínima -->
+        <label for="mensaje">Comentario:</label>
+        <br>
+        <textarea id="mensaje" name="mensaje" placeholder="Haznos algún comentario más sobre ti" rows="4" cols="50" minlength="10" required></textarea>
+        <br><br>
+        <hr>
+
+        <!-- Botón de envío -->
+        <button type="reset">Borrar</button>
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+
+</html>
+
+    
